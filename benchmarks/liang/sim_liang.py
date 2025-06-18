@@ -116,8 +116,8 @@ def run(trial, feature, reset, cv, robust):
 
     # Load the checkpoint if available
     if not reset and os.path.exists(LINEAR_PATH):
-        linear_model = torch.load(LINEAR_PATH)
-        nonlinear_model = torch.load(NONLINEAR_PATH)
+        linear_model = torch.load(LINEAR_PATH, weights_only=False)
+        nonlinear_model = torch.load(NONLINEAR_PATH, weights_only=False)
     else:
         # Train the model
         print('Fitting models with N={} P={} S={} T={} nperms={}'.format(N, P, S, T, nperms))

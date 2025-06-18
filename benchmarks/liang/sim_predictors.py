@@ -2,7 +2,7 @@ import os
 import numpy as np
 import torch
 from sim_liang import load_or_create_dataset
-from sklearn.externals import joblib
+import joblib
 from pyhrt.utils import create_folds
 from pyhrt.hrt import hrt
 
@@ -125,7 +125,7 @@ def get_r2(trial, info):
         return np.load(r2_path + '.npy')
     from sklearn.metrics import r2_score
     X, y, truth = load_or_create_dataset(trial, None, None, None)
-    model = get_model(info, X, y, None, False)
+    model = get_model(info, X, y, [], False)
     y_pred = model.predict(X)
     score = r2_score(y, y_pred)
     np.save(r2_path, score)

@@ -25,7 +25,7 @@ def run(trial):
              ModelInfo(trial, 'Random Forest', None, 'rf') 
                ]
 
-    folds = get_model(infos[0], X, y, None, False).folds
+    folds = get_model(infos[0], X, y, [], False).folds
     models = [get_model(info, X, y, folds, False) for info in infos]
 
     # Get the knockoffs for the OLS and neural net models

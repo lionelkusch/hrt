@@ -152,7 +152,7 @@ def fit_nn(X, y, nepochs=100, batch_size=10, val_pct=0.1,
         if verbose:
             print('Validation loss: {} Best: {}'.format(val_losses[epoch], best_loss))
 
-    model = torch.load(tmp_file)
+    model = torch.load(tmp_file, weights_only=False)
     os.remove(tmp_file)
     return model
 

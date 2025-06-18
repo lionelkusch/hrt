@@ -194,7 +194,7 @@ def fit_mdn(X, y, ncomponents=5,
         if verbose:
             print('Validation loss: {} Best: {}'.format(val_losses[epoch], best_loss))
 
-    model = torch.load(tmp_file)
+    model = torch.load(tmp_file, weights_only=False)
     os.remove(tmp_file)
     return model
 
