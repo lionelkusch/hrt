@@ -31,8 +31,8 @@ def run(trial):
     # Get the knockoffs for the OLS and neural net models
     LINEAR_PATH = 'data/{}/cv_linear.pt'.format(trial)
     NONLINEAR_PATH = 'data/{}/cv_nonlinear.pt'.format(trial)
-    ols_model = torch.load(LINEAR_PATH)
-    nn_model = torch.load(NONLINEAR_PATH)
+    ols_model = torch.load(LINEAR_PATH, weights_only=False)
+    nn_model = torch.load(NONLINEAR_PATH, weights_only=False)
     models.append(ols_model)
     models.append(nn_model)
     infos.append(ModelInfo(trial, 'OLS', None, 'linear'))

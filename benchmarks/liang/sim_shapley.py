@@ -28,7 +28,7 @@ def main():
     X = np.loadtxt(X_PATH, delimiter=',')
     y = np.loadtxt(Y_PATH, delimiter=',')
     truth = np.loadtxt(TRUTH_PATH, delimiter=',')
-    nonlinear_model = torch.load(NONLINEAR_PATH)
+    nonlinear_model = torch.load(NONLINEAR_PATH, weights_only=False)
     yhat = nonlinear_model.predict(X)
 
     # Check if all of the results have already been generated and compiled

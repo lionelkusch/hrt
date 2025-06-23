@@ -143,6 +143,7 @@ if __name__ == '__main__':
         for info in infos:
             r2_scores[info.name].append(get_r2(trial, info))
             all_p_filename = 'data/{}/{}.npy'.format(trial, info.prefix)
+            print('data/{}/{}.npy'.format(trial, info.prefix))
             if not os.path.exists(all_p_filename):
                 np.save(all_p_filename, np.full(P, np.nan))
             p_values[info.name][trial] = np.load(all_p_filename)

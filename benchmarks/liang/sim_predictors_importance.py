@@ -97,7 +97,7 @@ if __name__ == '__main__':
                  ModelInfo(trial, 'Elastic Net', None, 'enet'),
                  ModelInfo(trial, 'Lasso', None, 'lasso')]
 
-        models = [get_model(info, None, None, None, False) for info in infos]
+        models = [get_model(info, None, None, [], False) for info in infos]
 
         # Load the p-values for the predictor models
         for info, model in zip(infos, models):
